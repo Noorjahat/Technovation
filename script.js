@@ -8,13 +8,16 @@ window.addEventListener("DOMContentLoaded", function () {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzQ9TQ6jdeAyd-NwwuGMJdRNzQdE-nbPyhP9bOfHslAVtgMc12sv6FmaD2_vrz6CMIlYA/exec", {
-        method: "POST",
-        body: formData
-      });
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzQ9TQ6jdeAyd-NwwuGMJdRNzQdE-nbPyhP9bOfHslAVtgMc12sv6FmaD2_vrz6CMIlYA/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        }
+      );
 
-      if (!response.ok) throw new Error(response.status);
-
+      // Always treat as success because no-cors cannot return status
       showSuccessModal();
       form.reset();
 
@@ -27,7 +30,6 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// MODAL FUNCTIONS
 function showSuccessModal() {
   document.getElementById("successModal").style.display = "flex";
 }
