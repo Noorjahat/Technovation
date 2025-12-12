@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbzQ9TQ6jdeAyd-NwwuGMJdRNzQdE-nbPyhP9bOfHslAVtgMc12sv6FmaD2_vrz6CMIlYA/exec",
+        "https://script.google.com/macros/s/AKfycbwy1n3AXq7WwVXPIILIgroV0AoD4koDl5u1wRlKB1s0gfq8DlA6i5Pb2CybH6ZBd_PttQ/exec",
         {
           method: "POST",
           mode: "no-cors",
