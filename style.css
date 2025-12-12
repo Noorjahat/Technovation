@@ -98,13 +98,6 @@ section {
   border-radius: 10px;
 }
 
-/* small note under form */
-.note {
-  margin-top: 0.8rem;
-  color: #666;
-  font-size: 0.9rem;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -156,5 +149,6 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+
 
 
