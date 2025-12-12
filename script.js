@@ -1,26 +1,33 @@
-document.getElementById("registerForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+window.addEventListener("DOMContentLoaded", function () {
 
-  const form = e.target;
-  const formData = new FormData(form);
+  const form = document.getElementById("registerForm");
 
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbzQ9TQ6jdeAyd-NwwuGMJdRNzQdE-nbPyhP9bOfHslAVtgMc12sv6FmaD2_vrz6CMIlYA/exec", {
-      method: "POST",
-      body: formData
-    });
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-    if (!response.ok) throw new Error(response.status);
+    const formData = new FormData(form);
 
-    showSuccessModal(); // 🌟 Replace alert with modal
-    form.reset();
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzQ9TQ6jdeAyd-NwwuGMJdRNzQdE-nbPyhP9bOfHslAVtgMc12sv6FmaD2_vrz6CMIlYA/exec", {
+        method: "POST",
+        body: formData
+      });
 
-  } catch (err) {
-    console.error("Error:", err);
-    showErrorModal(); // Show error modal instead of alert
-  }
+      if (!response.ok) throw new Error(response.status);
+
+      showSuccessModal();
+      form.reset();
+
+    } catch (err) {
+      console.error("Error:", err);
+      showErrorModal();
+    }
+  });
+
 });
 
+
+// MODAL FUNCTIONS
 function showSuccessModal() {
   document.getElementById("successModal").style.display = "flex";
 }
@@ -32,4 +39,3 @@ function showErrorModal() {
 function closeModal(id) {
   document.getElementById(id).style.display = "none";
 }
-
