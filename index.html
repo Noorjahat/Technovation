@@ -51,7 +51,7 @@
 
   <section id="register">
     <h2 class="section-title">Register Now</h2>
-    <form id="registerForm" autocomplete="off">
+    <form id="registerForm" autocomplete="off" onsubmit="event.preventDefault();">
       <input type="text" name="name" placeholder="Your Name" required style="padding:0.7rem; width:250px; margin:5px;">
       <input type="email" name="email" placeholder="Your Email" required style="padding:0.7rem; width:250px; margin:5px;">
       <br>
@@ -85,6 +85,7 @@
 
 </body>
 </html>
+
 
 
 
